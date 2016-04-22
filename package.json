@@ -1,0 +1,24 @@
+{
+  "name": "acme-app",
+  "version": "1.0.0",
+  "description": "Acme application to allow user login, balance updates, and profile edits. ",
+  "main": "api/index.js",
+  "scripts": {
+    "test": "node api/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micha3lbrown/AcmeApp.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "POC"
+  ],
+  "author": "Michael N Brown",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/micha3lbrown/AcmeApp/issues"
+  },
+  "homepage": "https://github.com/micha3lbrown/AcmeApp#readme"
+}
