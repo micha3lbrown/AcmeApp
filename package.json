@@ -2,7 +2,7 @@
   "name": "acme-app",
   "version": "1.0.0",
   "description": "Acme application to allow user login, balance updates, and profile edits. ",
-  "main": "api/index.js",
+  "main": "server.js",
   "scripts": {
     "test": "node api/index.js"
   },
@@ -20,5 +20,16 @@
   "bugs": {
     "url": "https://github.com/micha3lbrown/AcmeApp/issues"
   },
-  "homepage": "https://github.com/micha3lbrown/AcmeApp#readme"
+  "homepage": "https://github.com/micha3lbrown/AcmeApp#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "jade": "^1.11.0",
+    "lowdb": "^0.12.5",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-alpha6"
+  }
 }
