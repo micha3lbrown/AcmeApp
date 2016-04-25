@@ -1,0 +1,13 @@
+extends ./layout.pug
+
+block content
+  h1 Acme Financial
+  .row
+    .col-sm-12
+      h2 Please Login.
+  .row
+    .col-sm-12
+      ul
+        each user in users
+            li= user._id
+
