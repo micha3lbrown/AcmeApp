@@ -1,0 +1,149 @@
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+h1, h2, h3, h4, h5, h6, p, span, ul, li {
+  font-family: Tahoma, Arial; }
+
+p {
+  font-size: 14px;
+  font-weight: bold; }
+
+body {
+  background-color: #eee;
+  padding-top: 50px; }
+
+.btn-block {
+  width: 100%; }
+
+#header-img {
+  background-color: #fff;
+  margin-bottom: 2em;
+  padding: 3em; }
+  #header-img .img-text {
+    color: #000;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 150px; }
+  #header-img .img-heading {
+    font-size: 2.5em;
+    font-weight: bold; }
+
+#header-nav {
+  background-color: #0246a6;
+  padding: 1.5em 0; }
+  #header-nav .header-text {
+    font-size: 1.5em; }
+
+.v-dot {
+  border-top: 1px dotted #000;
+  border-bottom: 1px dotted #000; }
+
+.bree {
+  font-family: 'Bree Serif', serif; }
+
+.white {
+  color: #fff; }
+
+.img-center {
+  position: relative;
+  margin: auto; }
+
+.rnd-border, #header-img {
+  border: 3px solid #000;
+  border-radius: 25%; }
+
+.pad1 {
+  padding: 1; }
+
+.padv1 {
+  padding: 1px 0px; }
+
+.padt1 {
+  padding-top: 1px; }
+
+.padb1 {
+  padding-bottom: 1px; }
+
+.pad3 {
+  padding: 3; }
+
+.padv3 {
+  padding: 3px 0px; }
+
+.padt3 {
+  padding-top: 3px; }
+
+.padb3 {
+  padding-bottom: 3px; }
+
+.pad5 {
+  padding: 5; }
+
+.padv5 {
+  padding: 5px 0px; }
+
+.padt5 {
+  padding-top: 5px; }
+
+.padb5 {
+  padding-bottom: 5px; }
+
+.pad10 {
+  padding: 10; }
+
+.padv10 {
+  padding: 10px 0px; }
+
+.padt10 {
+  padding-top: 10px; }
+
+.padb10 {
+  padding-bottom: 10px; }
+
+.pad25 {
+  padding: 25; }
+
+.padv25 {
+  padding: 25px 0px; }
+
+.padt25 {
+  padding-top: 25px; }
+
+.padb25 {
+  padding-bottom: 25px; }
+
+.pad50 {
+  padding: 50; }
+
+.padv50 {
+  padding: 50px 0px; }
+
+.padt50 {
+  padding-top: 50px; }
+
+.padb50 {
+  padding-bottom: 50px; }
+
+.pad75 {
+  padding: 75; }
+
+.padv75 {
+  padding: 75px 0px; }
+
+.padt75 {
+  padding-top: 75px; }
+
+.padb75 {
+  padding-bottom: 75px; }
+
+.pad100 {
+  padding: 100; }
+
+.padv100 {
+  padding: 100px 0px; }
+
+.padt100 {
+  padding-top: 100px; }
+
+.padb100 {
+  padding-bottom: 100px; }

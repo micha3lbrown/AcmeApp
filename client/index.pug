@@ -1,0 +1,23 @@
+extends ./layout.pug
+
+block content
+  -console.log(message)
+  if message.length > 0
+    .alert.alert-danger.text-center= message
+
+  .row
+    .col-sm-4.col-sm-offset-4.text-center
+      #header-img
+        img.img-responsive(src='/images/AcmeFinancialLogo.png')
+        .img-text.img-heading.bree Financial
+  .row
+    .col-sm-4.col-sm-offset-4
+      form(action='/login', method='post')
+        .form-group
+          label Email
+          input(type='text', class='form-control', name='email')
+        .form-group
+          label Password
+          input(type='password', class='form-control', name='password')
+        button.btn.btn-primary.btn-lg.btn-block(type='submit') Login
+
