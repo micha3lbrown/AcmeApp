@@ -1,0 +1,28 @@
+extends ../layout.pug
+
+block content
+  include ../nav.pug
+  .row.padt25
+    .col-sm-12.col-lg-4.col-lg-offset-4
+      p= 'Welcome ' + user.name.first + ' ' + user.name.last
+  .row.padv10
+    .col-sm-12.col-lg-4.col-lg-offset-4.v-dot.text-center.padv10
+      p Current Balance:
+      strong= user.balance
+  .row.padv5
+    .col-xs-4.col-lg-2.col-lg-offset-4
+      img.img-responsive.img-center.rnd-border.pad10(src= user.picture)
+    .col-xs-8.col-lg-2.padt25
+      p= 'Age: ' + user.age
+      p= 'Eye Color: ' + user.eyeColor
+      p= 'Company: ' + user.company
+  .row.padv10
+    .col-sm-12.col-lg-4.col-lg-offset-4
+      p= 'Email: ' + user.email
+      p= 'Phone: ' + user.phone
+      p= 'Address: ' + user.address
+  .row.padv5
+    .col-sm-12.col-lg-4.col-lg-offset-4
+      a.btn.btn-primary.btn-block(href='/profile/edit') Edit My Details
+
+

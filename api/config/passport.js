@@ -1,32 +1,40 @@
-var LocalStrategy = require('passport-local').Strategy;
+var LocalStrategy = require('passport-local').Strategy,
+    UserModel = require('../models/User');
+
+var User = new UserModel;
 
 module.exports = function(passport, Db) {
 
-  passport.serializeUser(function(user, next){
-    next(null, user._id);
+  passport.serializeUser(function(user, done){
+    done(null, user._id);
   });
 
-  passport.deserializeUser(function(id, next){
-    user = Db.Users.find({ _id: id});
+  passport.deserializeUser(function(id, done){
+    user = User.findById(id);
     if (!user) {
-      return(next({message: 'Invalid User Id'}, null));
+      return(done({message: 'Invalid User Id'}, null));
     }
-    next(null, user._id);
+    done(null, user._id);
   });
 
   passport.use(new LocalStrategy({
-      // Changing username field to Email
       usernameField: 'email'
     },
-    function(email, password, next) {
-      var user = Db.Users.find({ email: email });
-      if (!user) {
-        return next({ message: 'Invalid User' }, null)
+    function(email, password, done) {
+      var user = new UserModel({email: email});
+      if (!user.user) {
+        console.log('Invalid User.');
+        return done({ message: 'Invalid User' });
       }
-      if (!Db.Users.validPassword(user, password)){
-        return next({ message: 'Invalid Password' }, null)
+      if (!user.validPassword(password)){
+        console.log('Invalid password.');
+        return done({ message: 'Invalid Password' });
       }
-      return next(null, user)
+      if (!user.user.isActive) {
+        console.log('Your account has been suspended.');
+        return done({ message: 'Your account has been suspended' });
+      }
+      return done(null, user.user);
     }));
 
 };

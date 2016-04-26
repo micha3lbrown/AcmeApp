@@ -29,6 +29,7 @@
     "express-session": "^1.13.0",
     "jade": "^1.11.0",
     "lowdb": "^0.12.5",
+    "node-sass": "^3.5.3",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "pug": "^2.0.0-alpha6"

@@ -2,12 +2,13 @@ extends ./layout.pug
 
 block content
   .row
-    .col-sm-12
-      h1 Login &nbsp
-        span.fa.fa-sign-in
+      .col-sm-4.col-sm-offset-4.text-center
+        #header-img
+          img.img-responsive(src='/images/AcmeFinancialLogo.png')
+          .img-text.img-heading.bree Financial
   .row
-    .col-sm-6
-      if messages
+    .col-sm-4.col-sm-offset-4
+      if message
         .alert.alert-danger= message
       form(action='/login', method='post')
         .form-group
@@ -16,4 +17,4 @@ block content
         .form-group
           label Password
           input(type='password', class='form-control', name='password')
-        button.btn.btn-default.btn-lg(type='submit') Login
+        button.btn.btn-primary.btn-lg.btn-block(type='submit') Login

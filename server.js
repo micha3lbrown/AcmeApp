@@ -14,7 +14,11 @@ app.set('view engine', 'pug');
 
 require('./api/config/passport')(passport, Db);
 
+app.use(express.static('public'));
 app.use(cookieParser('test'));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(session({
   resave: true,
   saveUninitialized: true,
@@ -23,13 +27,11 @@ app.use(session({
     maxAge: 60000
   }}
 ));
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-require('./api/routes.js')(app, passport, Db);
+app.use(flash());
+
+require('./api/routes.js')(app, passport);
 
 app.listen(port);
 
