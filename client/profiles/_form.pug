@@ -1,0 +1,29 @@
+form(action='/profile' method='post')
+  .form-group
+    label First Name
+    input.form-control(type='name', name='name[first]', value=user.name.first)
+  .form-group
+    label Last Name
+    input.form-control(type='name', name='name[last]', value=user.name.last)
+  .row
+    .col-sm-12.col-lg-6
+      .form-group
+        label Age
+        input.form-control(type='text', name='age', value=user.age)
+    .col-sm-12.col-lg-6
+      .form-group
+        label Eye Color
+        input.form-control(type='text', name='eyeColor', value=user.eyeColor)
+  .form-group
+    label Company
+    input.form-control(type='text', name='company', value=user.company)
+  .form-group
+    label Email
+    input.form-control(type='text', name='email', value=user.email)
+  .form-group
+    label Phone
+    input.form-control(type='text', name='phone', value=user.phone)
+  .form-group
+    label Address
+    textarea.form-control(rows='3', name='address')=user.address
+  button.btn.btn-primary.btn-block(type='submit') Save
