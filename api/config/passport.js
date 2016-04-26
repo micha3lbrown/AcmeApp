@@ -18,21 +18,19 @@ module.exports = function(passport, Db) {
   });
 
   passport.use(new LocalStrategy({
-      usernameField: 'email'
+      usernameField: 'email',
+      passReqToCallback: true
     },
-    function(email, password, done) {
+    function(req, email, password, done) {
       var user = new UserModel({email: email});
       if (!user.user) {
-        console.log('Invalid User.');
-        return done({ message: 'Invalid User' });
+        return done(null, false, req.flash('loginMessage', 'Invalid User'));
       }
       if (!user.validPassword(password)){
-        console.log('Invalid password.');
-        return done({ message: 'Invalid Password' });
+        return done(null, false, req.flash('loginMessage', 'Invalid Password'));
       }
       if (!user.user.isActive) {
-        console.log('Your account has been suspended.');
-        return done({ message: 'Your account has been suspended' });
+        return done(null, false, req.flash('loginMessage', 'Suspended Account'));
       }
       return done(null, user.user);
     }));

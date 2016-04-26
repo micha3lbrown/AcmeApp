@@ -6,13 +6,13 @@
       "isActive": true,
       "balance": "$3,585.69",
       "picture": "http://lorempixel.com/100/100/people",
-      "age": "35",
-      "eyeColor": "blue",
+      "age": "357",
+      "eyeColor": "Blue",
       "name": {
-        "first": "Hendersonsss",
-        "last": "Briggssss"
+        "first": "Henderson",
+        "last": "Briggs"
       },
-      "company": "GEEKNET",
+      "company": "GEEKNETs",
       "email": "henderson.briggs@geeknet.net",
       "password": "23derd*334",
       "phone": "+1 (936) 451-3590",

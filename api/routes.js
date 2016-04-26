@@ -1,42 +1,23 @@
-UserModel = require('./models/User');
+var UserModel = require('./models/User');
 
-var User = new UserModel,
-    id = '5410953eb0e0c0ae25608277',
-    id2 = '5410953eee9a5b30c3eea476';
+var User = new UserModel;
 
 module.exports = function(app, passport) {
 
   app.get('/', function(req, res) {
-    res.render('index.pug');
+    var message = req.flash('loginMessage')
+    res.render('index.pug', { message });
   });
 
-  app.get('/login', function(req, res){
-    res.render('login.pug');
-  })
-
-  // app.post('/login', function(req, res, done){
-  //   passport.authenticate('local', function(err, user) {
-  //     if(err) { return res.redirect('/login', { message: err }); }
-  //     return res.redirect('/profile')
-  //   })(req, res, done);
-  // })
   app.post('/login', passport.authenticate('local', {
-    failureRedirect: '/login',
     successRedirect: '/profile',
+    failureRedirect: '/',
     failureFlash: true
-  }), function(req, res){
-    // console.log(res.l);
-    res.redirect('/login', {req});
-  });
+  }));
 
   app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
-  });
-
-  app.post('/profile', isLoggedIn, function(req, res){
-    var user = User.save(req.body);
-    res.render('profiles/show', { user });
   });
 
   app.get('/profile', isLoggedIn, function(req, res) {
@@ -47,6 +28,11 @@ module.exports = function(app, passport) {
   app.get('/profile/edit', isLoggedIn, function(req, res) {
     var user = User.findById(req.user);
     res.render('profiles/edit.pug', { user });
+  });
+
+  app.post('/profile', isLoggedIn, function(req, res){
+    var user = User.save(req.body);
+    res.render('profiles/show', { user });
   });
 
   function isLoggedIn(req, res, next) {
